@@ -19,11 +19,11 @@ module.exports = {
         },
     },
     "local": {
-        "username": process.env.DB_USERNAME_DEV,
-        "password": process.env.DB_PASSWORD_DEV,
-        "database": process.env.DB_DATABASENAME_DEV,
-        "host": process.env.DB_HOST_DEV,
-        "dialect": process.env.DB_DIALECT_DEV,
+        "username": process.env.DB_LOCAL_USER,
+        "password": process.env.DB_LOCAL_PASSWORD,
+        "database": process.env.DB_LOCAL_DATABASE,
+        "host": process.env.DB_LOCAL_HOST ,
+        "dialect": process.env.DB_LOCAL_DIALECT,
         "dialectOptions": {
             "supportBigNumbers": true
         },
@@ -51,5 +51,5 @@ module.exports = {
             idle: 10000,
             maxUses:3
         },
-    }
+    },
 }

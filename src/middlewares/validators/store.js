@@ -12,10 +12,10 @@ exports.validateUser = [
     .withMessage("Password is required")
     .notEmpty()
     .withMessage("Password must be filled"),
-  body("username")
+  body("mobile")
     .exists()
-    .withMessage("Username is required")
+    .withMessage("mobile is required")
     .notEmpty()
-    .withMessage("Username must be filled"),
+    .withMessage("mobile must be filled"),
 ];
 

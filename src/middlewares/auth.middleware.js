@@ -8,8 +8,8 @@ module.exports = () => {
         if (!token) return res.status(403).send("Invalid token!")
         const decoded = jwt.verify(token, config.TOKEN_KEY);
         if (decoded.id) {
-            const user = await tables.Users.findOne({ where: { id: decoded.id, isDeleted: false }, raw: true })
-            if (user) req.user = decoded;
+            const user = await tables.Stores.findOne({ where: { id: decoded.id, isDeleted: false }, raw: true })
+            if (user) req.store = decoded;
             else return res.status(401).send("Unauthorized!")
         } else return res.status(401).send("Unauthorized!")
         return next()

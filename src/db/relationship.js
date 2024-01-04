@@ -1,10 +1,10 @@
 const { sequelize } = require('./models');
 
-const Users = sequelize.import("./users");
+const Stores = sequelize.import("./stores");
 const Otp = sequelize.import("./otp");
 
 module.exports = {
-    Users,
+    Stores,
     Otp
 
 }

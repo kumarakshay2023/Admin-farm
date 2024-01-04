@@ -8,30 +8,27 @@ module.exports = function (sequelize, DataTypes) {
             primaryKey: true,
             autoIncrement: true
         },
-        user_id: {
-            type: DataTypes.BIGINT,
-        },
-        tshirt_size: {
-            type: DataTypes.BIGINT,
-            type: DataTypes.ENUM('XS', 'S', 'M', 'L', 'XL', 'XXL', 'XXXL'),
-        },
-        address: {
-            type: DataTypes.STRING,
-        },
-        city_id: {
-            type: DataTypes.BIGINT,
-        },
-        zip_code: {
-            type: DataTypes.BIGINT,
-        },
-        emergency_contact_name: {
+        name: {
             type: DataTypes.STRING(60),
+            allowNull: false,
         },
-        county_code: {
-            type: DataTypes.STRING(5),
-        },
-        emergency_phone: {
+        mobile: {
             type: DataTypes.BIGINT,
+            unique:true,
+            allowNull: false
+        },
+        email: {
+            type: DataTypes.STRING(100),
+            unique: true,
+            allowNull: false,
+        },
+        password: {
+            type: DataTypes.STRING,
+            allowNull: false
+        },
+        is_email_verified: {
+            type:DataTypes.BOOLEAN,
+            defaultValue: false
         },
         created_at: {
             type: DataTypes.BIGINT
@@ -40,7 +37,7 @@ module.exports = function (sequelize, DataTypes) {
             type: DataTypes.BIGINT
         }
     }, {
-        tableName: 'users',
+        tableName: 'stores',
         timestamps: false,
         hooks: timestampHook,
     });

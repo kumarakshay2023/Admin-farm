@@ -10,7 +10,14 @@ require("./src/db").connectDB();
 app.use(cors());
 
 app.use(routes);
-
+app.use((err, req, res, next) => {
+  console.error(err);
+  res.status(500).json({
+    status: false,
+    statusCode: err.statusCode || 500,
+    message: err.message,
+  });
+});
 app.use("/", (req, res) => {
   res.send("Welcome to DROC");
 });

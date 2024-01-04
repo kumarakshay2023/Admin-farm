@@ -8,11 +8,15 @@ module.exports = function (sequelize, DataTypes) {
             primaryKey: true,
             autoIncrement: true
         },
-        user_id: {
-            type: DataTypes.BIGINT,
+        email:{
+         type: DataTypes.STRING,
         },
         otp: {
             type: DataTypes.INTEGER,
+        },
+        store_id:{
+          type: DataTypes.BIGINT,
+          allowNull: false,
         },
         expires_at: {
             type: DataTypes.BIGINT,
